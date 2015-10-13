@@ -16,7 +16,7 @@ public class FabricaCafeCappuccino implements Fabrica {
 
     @Override
     public Cafe criarCafe() {
-        return new Cafe(5);
+        return new Cafe(2.5);
     }
 
     @Override

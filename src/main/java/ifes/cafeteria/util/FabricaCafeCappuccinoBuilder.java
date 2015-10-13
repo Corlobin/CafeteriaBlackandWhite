@@ -11,11 +11,10 @@ import ifes.cafeteria.cdp.Cafe;
  *
  * @author Ricardo
  */
-public class FabricaCafeNormalPromocao extends FabricaCafeNormal {
+public class FabricaCafeCappuccinoBuilder extends BuilderAbstrato {
 
-    @Override
-    public Cafe criarCafe() {
-        return new Cafe(1);
+    public FabricaCafeCappuccinoBuilder() {
+        this.fabrica = new FabricaCafeCappuccino();
     }
-    
+     
 }

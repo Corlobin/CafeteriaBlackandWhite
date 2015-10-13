@@ -11,11 +11,6 @@ import ifes.cafeteria.cdp.Cafe;
  *
  * @author Ricardo
  */
-public class FabricaCafeCappuccinoPromocao extends FabricaCafeCappuccino {
-
-    @Override
-    public Cafe criarCafe() {
-        return new Cafe(2.5);
-    }
-    
+public interface Director {
+    Cafe criarCafe(Builder pessoa);
 }

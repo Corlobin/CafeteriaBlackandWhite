@@ -6,16 +6,14 @@
 package ifes.cafeteria.util;
 
 import ifes.cafeteria.cdp.Cafe;
+import ifes.cafeteria.cdp.Ingredientes;
+import java.util.ArrayList;
 
 /**
  *
  * @author Ricardo
  */
-public class FabricaCafeSemCafeinaPromocao extends FabricaCafeSemCafeina {
-
-    @Override
-    public Cafe criarCafe() {
-        return new Cafe(1.5);
-    }
-    
+public interface Builder {
+    public void prepararIngredientes();
+    public Cafe montarCafe();
 }

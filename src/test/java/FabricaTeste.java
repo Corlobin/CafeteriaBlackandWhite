@@ -23,14 +23,14 @@ public class FabricaTeste {
     }
     
     @Test
-    public void TesteCafeNormal() {    
+    public void TesteCafeNormal() throws Exception {    
         Cafe cafe = FabricaCafe.criarCafe("segunda-feira");
-        assertEquals(cafe.getPreco(), 2);        
+        assertEquals(cafe.getPreco(), 1, 1);        
     }
     @Test
-    public void TesteCafeSemCafeina() {    
+    public void TesteCafeSemCafeina() throws Exception {    
         Cafe cafe = FabricaCafe.criarCafe("sábado");
-        assertEquals(cafe.getPreco(), 3);        
+        assertEquals(cafe.getPreco(), 1.5, 1.5);        
     }
    @Test
     public void TesteLeite() {    

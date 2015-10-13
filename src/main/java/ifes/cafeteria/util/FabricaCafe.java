@@ -6,34 +6,27 @@
 package ifes.cafeteria.util;
 
 import ifes.cafeteria.cdp.Cafe;
+import ifes.cafeteria.singleton.Builders;
 import java.util.HashMap;
 
 /**
  *
  * @author 20122bsi0387
  */
+
+
 public class FabricaCafe {
-    private static HashMap<String, Fabrica> dias;
-    private FabricaCafe(){
-        dias.put("segunda-feira", new FabricaCafeNormalPromocao());
-        dias.put("quarta-feira", new FabricaCafeNormalPromocao());
-        dias.put("sexta-feira", new FabricaCafeNormalPromocao());
-        
-        dias.put("terça-feira", new FabricaCafeSemCafeinaPromocao());
-        dias.put("quinta-feira", new FabricaCafeSemCafeinaPromocao());
-        dias.put("sábado", new FabricaCafeSemCafeinaPromocao());
-        
-        dias.put("domingo", new FabricaCafeCappuccinoPromocao());
-    }
-    public static Cafe criarCafe(String dia) {
-        System.out.println(dias);
-        Fabrica fabrica = dias.getOrDefault(dia, new FabricaCafeNormalPromocao());
-        
-        System.out.println(dia);
-        
-        Cafe cafe = fabrica.criarCafe();
-        cafe.setIngredientes(fabrica.criarIngredientes());
-        
+    
+    public static Cafe criarCafe(String dia) throws Exception {
+        Builders builders = Builders.getInstance();
+        Vendedor vendedor = new Vendedor();
+        Builder builder;
+        try{
+            builder = builders.getBuilder(dia);
+        }catch(Exception e){
+            throw new Exception(e.getMessage());
+        }   
+        Cafe cafe = vendedor.criarCafe(builder);        
         return cafe;
         
     }

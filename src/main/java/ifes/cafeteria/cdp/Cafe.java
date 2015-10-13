@@ -12,8 +12,9 @@ import java.util.ArrayList;
  * @author 20122bsi0387
  */
 public class Cafe {
-    private ArrayList<Ingredientes> ingredientes;
+    private static ArrayList<Ingredientes> ingredientes = new ArrayList<Ingredientes>();
     private double preco;
+    
     public Cafe() {
     }
 
@@ -45,12 +46,13 @@ public class Cafe {
     @Override
     public String toString() {
         StringBuilder st = new StringBuilder();
-        for (Ingredientes ingrediente: ingredientes) {
+        
+        for (Ingredientes ingrediente: this.ingredientes) {
             st.append(ingrediente);
             st.append(" ");
         }
+        
         return st.toString();
     }
-    
-    
+        
 }

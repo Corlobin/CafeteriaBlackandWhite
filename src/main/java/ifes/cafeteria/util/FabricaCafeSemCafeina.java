@@ -22,7 +22,7 @@ public class FabricaCafeSemCafeina implements Fabrica {
 
     @Override
     public Cafe criarCafe() {
-        return new Cafe(3);
+        return new Cafe(1.5);
     }
 
     @Override
